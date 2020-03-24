@@ -69,9 +69,9 @@ az webapp identity assign -g $RG -n $SITE
 
 #https://docs.microsoft.com/en-us/azure/app-service/environment/integrate-with-application-gateway
 #TODO: This Address is the Internal Load Balancer Address on the ASE (in theory az appservice ase list-addresses should get it but it is broken)
-ASELBADDRESS=10.0.0.11
+read -p 'What is the ILB Address for the ASE' ASELBADDRESS
 #TODO: This is a domain bound to App Gateway Public IP Address
-HOSTNAME=ase-demo.memoryleek.co.uk
+read -p 'What host name is the App Gateway public IP bound to' HOSTNAME
 
 
 az network application-gateway address-pool create \
