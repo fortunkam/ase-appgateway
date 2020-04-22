@@ -1,0 +1,1 @@
+Simple script for deploying an ILB ASE in a single zone 
