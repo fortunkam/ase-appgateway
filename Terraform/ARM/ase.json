@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string",
+            "metadata": {
+                "description": "The Azure App Service Name"
+            }
+        },
+        "subnetId": {
+            "type": "string",
+            "metadata": {
+                "description": "The Id of the virtual network"
+            }
+        }
+    },
+    "resources": [
+      {
+         "type": "Microsoft.Web/hostingEnvironments",
+         "kind": "ASEV2",
+         "name": "[parameters('name')]",
+         "apiVersion": "2019-02-01",
+         "location": "[resourceGroup().location]",
+        "properties": {
+            "name": "[parameters('name')]",
+            "location": "[resourceGroup().location]",
+            "ipSslAddressCount": 0,
+            "internalLoadBalancingMode": "3",
+            "virtualNetwork": {
+                "id": "[parameters('subnetId')]"
+            }
+         }
+     }
+    ]
+}

@@ -1,1 +1,5 @@
 **\P2SVPNRootCert.cer
+Terraform/terraform.*
+Terraform/certs
+.terraform
+*.cer
