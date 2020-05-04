@@ -61,4 +61,17 @@ locals {
 
     #Website
     website_name="${var.prefix}-site"
+
+    #App Gateway
+    appgateway_publicip="${var.prefix}-appgateway-ip"
+    appgateway="${var.prefix}-appgateway"
+    appgateway_probe="${var.prefix}-appgateway-probe"
+    appgateway_private_ip_address="10.1.1.5"
+    appgateway_frontend_ip_configuration_name="${var.prefix}-appgateway-fe-ip"
+    appgateway_frontend_port_name="${var.prefix}-appgateway-fe-port"
+    appgateway_listener_name="${var.prefix}-appgateway-listener"
+    appgateway_http_setting_name="${var.prefix}-appgateway-http-setting"
+    appgateway_backend_pool_name="${var.prefix}-appgateway-backend-pool"
+    appgateway_ipconfig_name="${var.prefix}-appgateway-ipconfig"
+    appgateway_request_routing_rule_name="${var.prefix}-appgateway-rule"
 }

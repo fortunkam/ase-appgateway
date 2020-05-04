@@ -1,5 +1,18 @@
 # Deploy an ASE with an App Gateway
 
-Note: This will also contains scripts to deploy a P2S VPN (for connectivity on the vnet) however I haven't set up a Private DNS Zone so you will need host file hacks to connect.
+Before running the Terraform scripts there is a powershell script that needs to be run first to generate and import the certificates needed for the Point-to-site VPN. `/Terraform/scripts/CreateVPNCert.ps1`
 
-Part of the setup for this requires a DNS entry to be configured for the app gateway (and as a custom host name in the App Service).  You will need to configure an A record to point at the App Gateway public IP.
+Once that is done, navigate to the Terraform folder in a powershell console.
+Run `terraform init`
+then `terraform apply`
+to install everything.
+
+What you are getting is..
+
+- 2 peered vnets
+- A VPN Gateway configured for a Point-to-site VPN
+- An ILB ASE
+- An App Gateway
+- A VM (Bastion) for remote access (if the P2S VPN doesn't work)
+- 2 private DNS zones for the ASE
+- An App Plan and Website running on the ASE.
