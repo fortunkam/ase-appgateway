@@ -5,7 +5,8 @@ Before running the Terraform scripts there is a powershell script that needs to 
 This repo has been tested using the following configuration
 - Terraform v0.12.24
 - Powershell Core v7 ("Classic" powershell won't work, I need a feature that was introduced in v6 !)
-1
+
+
 Once that is done, navigate to the Terraform folder in a powershell console.
 Run `terraform init`
 then `terraform apply`
