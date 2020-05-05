@@ -57,4 +57,6 @@ resource "azurerm_virtual_network_peering" "spoketohub" {
   remote_virtual_network_id = azurerm_virtual_network.hub.id
   allow_forwarded_traffic      = true
   use_remote_gateways  = true
+
+  depends_on = [azurerm_virtual_network_peering.hubtospoke]
 }
